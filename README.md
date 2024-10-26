@@ -41,5 +41,5 @@
 
 Для этого в новой вкладке терминала нужно ввести команду:
 ```
-gradlew allureserve
+./gradlew allureserve
 ```

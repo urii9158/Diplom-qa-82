@@ -7,21 +7,20 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class MainPage {
-    private SelenideElement heading = $$("h3").find(Condition.exactText("Выберите способ оплаты"));
     private SelenideElement buyWithDebitCardButton = $$("button").find(Condition.exactText("Купить"));
     private SelenideElement buyWithCreditCardButton = $$("button").find(Condition.exactText("Купить в кредит"));
-
-    public MainPage() {
-        heading.shouldBe(visible);
-    }
+    private SelenideElement creditVersion = $$("h3").find(Condition.exactText("Кредит по данным карты"));
+    private SelenideElement debitVersion = $$("h3").find(Condition.exactText("Оплата по карте"));
 
     public PaymentPage goToDebitPage() {
         buyWithDebitCardButton.click();
-        return new PaymentPage(); // Переход к странице оплаты дебетовой картой
+        debitVersion.shouldBe(visible);
+        return new PaymentPage();
     }
 
     public PaymentPage goToCreditPage() {
         buyWithCreditCardButton.click();
-        return new PaymentPage(); // Переход к странице оплаты кредитной картой
+        creditVersion.shouldBe(visible);
+        return new PaymentPage();
     }
 }

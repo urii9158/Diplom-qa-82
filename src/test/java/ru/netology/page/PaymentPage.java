@@ -36,26 +36,26 @@ public class PaymentPage {
     }
 
     public void waitNotificationApproved() {
-        approvedOperation.shouldBe(visible, Duration.ofSeconds(15));
+        approvedOperation.shouldBe(visible, Duration.ofSeconds(10));
     }
 
     public void waitNotificationFailure() {
-        failureOperation.shouldBe(visible, Duration.ofSeconds(15));
+        failureOperation.shouldBe(visible, Duration.ofSeconds(10));
     }
 
     public void waitNotificationWrongFormat() {
-        wrongFormatError.shouldBe(visible, Duration.ofSeconds(15));
+        wrongFormatError.shouldBe(visible, Duration.ofSeconds(10));
     }
 
     public void waitNotificationExpirationDateError() {
-        cardExpirationDateError.shouldBe(visible, Duration.ofSeconds(15));
+        cardExpirationDateError.shouldBe(visible, Duration.ofSeconds(10));
     }
 
     public void waitNotificationExpiredError() {
-        cardExpiredError.shouldBe(visible, Duration.ofSeconds(15));
+        cardExpiredError.shouldBe(visible, Duration.ofSeconds(10));
     }
 
     public void waitNotificationRequiredField() {
-        requiredFieldError.shouldBe(visible, Duration.ofSeconds(15));
+        requiredFieldError.shouldBe(visible, Duration.ofSeconds(10));
     }
 }

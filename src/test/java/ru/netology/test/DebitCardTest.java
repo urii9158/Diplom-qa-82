@@ -201,4 +201,39 @@ public class DebitCardTest {
         paymentPage.inputData(info);
         paymentPage.waitNotificationWrongFormat();
     }
+
+    @Test
+    void shouldNotSubmitWithThreeWordOwnerName() {
+        var info = getCardHolder3Words();
+        paymentPage.inputData(info);
+        paymentPage.waitNotificationWrongFormat();
+    }
+
+    @Test
+    void shouldNotSubmitWithLowercaseOwnerName() {
+        var info = getCardHolderDataInLowercase();
+        paymentPage.inputData(info);
+        paymentPage.waitNotificationWrongFormat();
+    }
+
+    @Test
+    void shouldNotSubmitWithUppercaseOwnerName() {
+        var info = getCardHolderDataInUppercase();
+        paymentPage.inputData(info);
+        paymentPage.waitNotificationWrongFormat();
+    }
+
+    @Test
+    void shouldNotSubmitWithOwnerNameUnderMinLength() {
+        var info = getCardHolderLessThan1Symbol();
+        paymentPage.inputData(info);
+        paymentPage.waitNotificationWrongFormat();
+    }
+
+    @Test
+    void shouldNotSubmitWithOwnerNameOverMaxLength() {
+        var info = getCardHolderMoreThan64Symbols();
+        paymentPage.inputData(info);
+        paymentPage.waitNotificationWrongFormat();
+    }
 }

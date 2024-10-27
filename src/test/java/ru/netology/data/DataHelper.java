@@ -167,4 +167,44 @@ public class DataHelper {
         String cvv = faker.number().digits(3);
         return new Card("4444444444444441", month, year, "Denisova Ekaterina %$*!&", cvv);
     }
+
+    public static Card getCardHolder3Words() {
+        Faker faker = new Faker();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, "Denisova Ekaterina Ekaterina", cvv);
+    }
+
+    public static Card getCardHolderDataInLowercase() {
+        Faker faker = new Faker();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, "denisova ekaterina", cvv);
+    }
+
+    public static Card getCardHolderDataInUppercase() {
+        Faker faker = new Faker();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, "DENISOVA EKATERINA", cvv);
+    }
+    public static Card getCardHolderLessThan1Symbol() {
+        Faker faker = new Faker();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, "y", cvv);
+    }
+
+    public static Card getCardHolderMoreThan64Symbols() {
+        Faker faker = new Faker();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String longName = faker.lorem().characters(65, 70, true, false);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, longName, cvv);
+    }
 }

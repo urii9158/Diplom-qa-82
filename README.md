@@ -7,7 +7,7 @@
 ## Тестовая документация
 1. [План тестирования](https://github.com/urii9158/Diplom-qa-82/blob/main/documents/Plan.md);
 1. [Отчёт по итогам тестирования](https://github.com/urii9158/Diplom-qa-82/blob/main/documents/Report.md);
-1. [Отчет по итогам автоматизации](https://github.com/urii9158/Diplom-qa-82/blob/main/documents/Report.md);
+1. [Отчет по итогам автоматизации](https://github.com/urii9158/Diplom-qa-82/blob/main/documents/Summary.md);
 
 ## Запуск приложения
 ### Подготовительный этап
